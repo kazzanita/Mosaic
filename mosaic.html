@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+	<head>
+    	<title>Image to Mosaic</title>
+  		<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+		<meta name="description" content="Project turning the selected image into a mosaic" />
+		<meta name="keywords" content="HTML,CSS,JavaScript,Canva,Image,Mosaic" />
+		<meta name="author" content="Stephane Moroso" />
+    	<link href="favicon.ico" rel="shortcut icon" />
+		<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha/css/bootstrap.css" />
+		<link rel="stylesheet" type="text/css" href="/css/style.css" />
+	</head>
+	<body>
+		<div id="container">
+			<h1 class="dynamic-font text-center white-color">Turn a picture into a mosaic!</h1>
+
+			<div id="form-container" class="text-center">
+				<form>
+					<label id="image-input-label" for="image-input" class="button">Browse...</label>
+					<input id="image-input" type="file" accept="image/*" />
+				</form>
+			</div>
+
+			<div id="images-container" class="text-center box white-bg">
+				<button id="turn-mosaic-button" class="button">Turn To Mosaic</button>
+				<button id="flip-image" class="button">Flip Image</button>
+
+				<div id="image-preview-container">
+					<h2 class="dynamic-font dark-blue-color">Preview:</h3>
+					<img id="image-preview" src="#" alt="Image Preview" />
+				</div>
+
+				<div id="loading-spinner-container">
+					<div id="loading-spinner" class="loading-spinner">
+						<span></span>
+					</div>
+				</div>
+
+				<div id="image-mosaic-container">
+					<h2 class="dynamic-font dark-blue-color">Mosaic:</h3>
+					<div id="image-mosaic"></div>
+				</div>
+			</div>
+		</div>
+	</body>
+
+	<!--Scripts-->
+	<script type="text/javascript" src="js/mosaic.js"></script>
+	<script type="text/javascript" src="js/image.js"></script>
+	<script type="text/javascript" src="js/client.js"></script>
+</html>
