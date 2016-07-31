@@ -82,7 +82,7 @@
 			let file = evt.target.files[0];
 	        let fsize = file.size;
 	        if(fsize > maxFileSize){
-	        	alert("The image is too big!");
+	        	alert("The image is too heavy!");
 	        	return null;
 	        }
 
@@ -124,6 +124,7 @@
 			_imageMosaicElementContainer.style.removeProperty("display");
 
 			let finalArray = result.data || result;
+			//One of the projects constraints is to render the mosaic one row at a time, from top to bottom
 			for(let rowNumber = 0; rowNumber < numRows; rowNumber++){
 				let rowArray = finalArray.slice(rowNumber*numCols, rowNumber*numCols+numCols);
 
