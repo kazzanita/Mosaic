@@ -3,7 +3,7 @@ function getColors(c) {
     let pixels, r, g, b, a, count;
     r = g = b = a = count = 0;
     pixels = c.getImageData(0, 0, c.width, c.height);
-    for (let i = 0, data = pixels.data; i < data.length; i += 4) {
+    for(let i = 0, data = pixels.data; i < data.length; i += 4) {
         a = data[i + 3]; // alpha
         // skip pixels >50% transparent
         if (a < (255 / 2))
@@ -38,11 +38,10 @@ function getImageInformation(srcValue){
 
 function getImagePiecesAvgColor(imagePieces){
 	let imagePiecesAverageColor = [];
-	let length = imagePieces.length;
-    for(let i = 0; i < length; i++) {
-		let colors = getColors(imagePieces[i]);
+	imagePieces.forEach((piece) => {
+		let colors = getColors(piece);
 		imagePiecesAverageColor.push(rgbToHex(colors.r, colors.g, colors.b));
-    }
+	});
     return imagePiecesAverageColor;
 }
 

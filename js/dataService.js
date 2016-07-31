@@ -15,11 +15,9 @@ function fetchColor(hex){
 }
 
 function fetchColors(imagePiecesAverageColor){
-	let length = imagePiecesAverageColor.length;
-	let promises = [];
-	for(let i=0; i<length; i++){
-		promises.push(memoizedFetchColor(imagePiecesAverageColor[i]));
-	}
+	let promises = imagePiecesAverageColor.map((pieceAvgColor) => {
+		return memoizedFetchColor(pieceAvgColor);
+	});
 	return Promise.all(promises);
 }
 
